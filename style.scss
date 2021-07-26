@@ -1,7 +1,10 @@
 *{
   box-sizing: border-box;
+  user-select: none;
 }
-
+body{
+  overflow-x: hidden;
+}
 input[type = text]{
   margin: .5rem 0;
 }
@@ -9,11 +12,11 @@ label{
   display:flex;
   flex-flow: column;
 }
- tbody{
-   td{
-     text-align: center;
-   }
- }
+tbody{
+  td{
+    text-align: center;
+  }
+}
 
 .wrapper{
   height: 100%;
@@ -32,10 +35,10 @@ label{
 
 .selectBox {
   position: relative;
-select {
-  width: 100%;
-  font-weight: bold;
-}
+  select {
+    width: 100%;
+    font-weight: bold;
+  }
 }
 
 .overSelect {
@@ -54,6 +57,7 @@ select {
   height: 22rem;
   overflow-y: scroll;
   background-color: #FFFF;
+  z-index: 999;
   label {
     display: flex;
     justify-content: space-between;
@@ -70,19 +74,30 @@ select {
 .open{
   display: block;
 }
-.dataTables_wrapper{
 
-  margin: 5rem 0 0 0;
+.dataTables_wrapper{
+  width: 100vw;
+  overflow: scroll;
+  header{
+    position:fixed;
+    background-color: #ffffff;
+    width: 100%;
+    top: 0;
+    z-index: 99999;
+    padding: .5rem 1rem;
+    border-bottom: 1px solid #000000;
+  }
 }
-.dataTables_length{
-  background-color:#ffffff;
-  position: fixed;
-  top:0;
-  left: 8px;
+table{
+  margin: 5rem 0!important;
 }
-.dataTables_filter{
-  background-color:#ffffff;
-  position: fixed;
-  top:0;
-  right: 8px;
+footer{
+  position: fixed!important;
+  background-color: #ffffff;
+  width: 100%;
+  bottom: 0;
+  z-index: 99999;
+  padding:  1rem;
+  overflow: unset!important;
+  border-top: 1px solid #000000;
 }

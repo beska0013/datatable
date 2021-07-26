@@ -1,5 +1,10 @@
 * {
   box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 input[type=text] {
@@ -55,6 +60,7 @@ tbody td {
   height: 22rem;
   overflow-y: scroll;
   background-color: #FFFF;
+  z-index: 999;
 }
 .checkboxes label {
   display: flex;
@@ -73,21 +79,32 @@ tbody td {
 }
 
 .dataTables_wrapper {
-  margin: 5rem 0 0 0;
+  width: 100vw;
+  overflow: scroll;
+}
+.dataTables_wrapper header {
+  position: fixed;
+  background-color: #ffffff;
+  width: 100%;
+  top: 0;
+  z-index: 99999;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #000000;
 }
 
-.dataTables_length {
-  background-color: #ffffff;
-  position: fixed;
-  top: 0;
-  left: 8px;
+table {
+  margin: 5rem 0 !important;
 }
 
-.dataTables_filter {
+footer {
+  position: fixed !important;
   background-color: #ffffff;
-  position: fixed;
-  top: 0;
-  right: 8px;
+  width: 100%;
+  bottom: 0;
+  z-index: 99999;
+  padding: 1rem;
+  overflow: unset !important;
+  border-top: 1px solid #000000;
 }
 
 /*# sourceMappingURL=style.css.map */
